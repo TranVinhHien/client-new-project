@@ -1,0 +1,19 @@
+{
+  "System": {
+    "tieng-anh": "Tiếng Anh",
+    "tieng-viet": "Tiếng Việt",
+    "dang-nhap": "Đăng nhập"
+  },
+  "Login": {
+    "title": "Đăng nhập",
+    "description": "Nhập username của bạn bên dưới để đăng nhập vào tài khoản",
+    "username_label": "Tài Khoảng",
+    "username_placeholder": "hienlazada",
+    "password_label": "Mật khẩu",
+    "forgot_password": "Quên mật khẩu?",
+    "login_button": "Đăng nhập",
+    "login_with_google": "Đăng nhập bằng Google",
+    "sign_up_prompt": "Chưa có tài khoản?",
+    "sign_up": "Đăng ký"
+  }
+}

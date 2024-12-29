@@ -3,7 +3,7 @@
 // file này lưu tất cả các đưuòng dẫn api
 const API = {
 
-    base: "http://localhost:8080/v1",
+    base: process.env.NEXT_PUBLIC_API_SERVER,
     user: {
         login: "/user/login",
         register: "/user/register",

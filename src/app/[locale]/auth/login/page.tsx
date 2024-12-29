@@ -43,7 +43,6 @@ export default function LoginForm() {
         LoginMutation.mutate(loginData, {
             onSuccess: (response) => {
                 try {
-                    console.log(response);
                     const decodedACC: any = jwtDecode(response.access_token);
                     const decodedREF: any = jwtDecode(response.refresh_token);
                     const user: any = response.user

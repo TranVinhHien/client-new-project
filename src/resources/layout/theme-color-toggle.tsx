@@ -31,9 +31,6 @@ export default function ThemeColorToggle() {
     const [open, setOpen] = React.useState(false)
     const { themeColor, setThemeColor } = useThemeContext();
     const { theme } = useTheme();
-    console.log(themeColor)
-    console.log(theme)
-    console.log(availableThemeColors.find(cl => cl.name === themeColor)?.light)
     const createSelectItems = () => {
         return <div className="flex w-max">
             {

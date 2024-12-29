@@ -7,7 +7,7 @@ import { jwtDecode } from 'jwt-decode';
 const request = axios.create({
     baseURL: API.base,
     headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
     },
 });
 
@@ -32,9 +32,11 @@ request.interceptors.request.use(
                         config.headers.Authorization = `Bearer ${accessToken}`;
                     }
                 } catch (error) {
+                    cookies.logOut()
                     throw new Error("You need login!")
                 }
             } else {
+                cookies.logOut()
                 throw new Error("You need login!")
             }
         }

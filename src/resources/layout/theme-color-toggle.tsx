@@ -6,9 +6,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button"
 import {
     Command,
-    CommandEmpty,
     CommandGroup,
-    CommandInput,
     CommandItem,
     CommandList,
 } from "@/components/ui/command"
@@ -31,15 +29,27 @@ export default function ThemeColorToggle() {
     const [open, setOpen] = React.useState(false)
     const { themeColor, setThemeColor } = useThemeContext();
     const { theme } = useTheme();
+    const refColor = React.useRef<HTMLDivElement>(null)
+
+    React.useEffect(() => {
+        // when hover on Popover, set open to true
+        const handleMouseEnter = () => {
+            setOpen(true)
+        }
+        const handleMouseLeave = () => {
+            setOpen(false)
+        }
+        refColor.current?.addEventListener('mouseenter', handleMouseEnter)
+        // refColor.current?.addEventListener('mouseleave', handleMouseLeave)
+    }, [])
+
     const createSelectItems = () => {
         return <div className="flex w-max">
             {
                 availableThemeColors.map(({ name, light, dark }) => (
                     <CommandItem
-                        onSelect={(currentValue) => {
+                        onSelect={(currentValue: any) => {
                             setThemeColor(currentValue as ThemeColors)
-                            //setValue(currentValue === value ? "" : currentValue)
-                            setOpen(false)
                         }}
                         className="rounded-full p-3 w-auto h-auto justify-center"
                         key={name} value={name}>
@@ -58,9 +68,9 @@ export default function ThemeColorToggle() {
 
             }
         </div>
-    };
+    };  
     return (
-        <Popover open={open} onOpenChange={setOpen}>
+        <Popover open={open}>
             <PopoverTrigger asChild>
                 <Button
                     variant="outline"
@@ -71,6 +81,7 @@ export default function ThemeColorToggle() {
                     {themeColor
                         ? <div className="flex items-center ">
                             <div
+                                ref={refColor}
                                 className={cn(
                                     "items-center",
                                     "rounded-full",
@@ -81,7 +92,7 @@ export default function ThemeColorToggle() {
                                 )}
                             ></div>
                         </div>
-                        : "Select language..."}
+                        : "Select color..."}
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="p-0">

@@ -1,4 +1,5 @@
 import Layout from "@/resources/layout/ContainerLayout";
+import Footer from "@/resources/layout/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +15,9 @@ export default async function RootLayout({
 
     return (
         <Layout>
+            <div>
             {children}
+            </div>
         </Layout>
     );
 }

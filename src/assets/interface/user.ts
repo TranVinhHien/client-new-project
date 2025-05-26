@@ -3,11 +3,17 @@ interface Role {
     name: string;
     code: string;
 }
-
+interface Address{
+    address:string;
+    id_address:string;
+    phone_number:string;
+}
 
 interface UserLoginType {
-    id: string;
-    username: string;
-    isGraduate: number;
-    roles: Role[];
+    gender: string;
+    dob: string;
+    email: string;
+    name:string;
+    image:Valid<string>;
+    addess:Address[];
 }

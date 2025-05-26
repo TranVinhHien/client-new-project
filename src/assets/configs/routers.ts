@@ -4,6 +4,7 @@ const ROUTER = {
         login: "/auth/login",
         forgotPassword: "/auth/auth-login/forgot-password"
     },
+    search: "/search",
     information: "/information",
     home: "/",
     master: {
@@ -29,6 +30,10 @@ const ROUTER = {
         tasks_assignment: "/job/tasks_assignment",
         tasks_assigned: "/job/tasks_assigned",
         tasks_group: "/job/tasks_group"
+    },
+    timkiem:{
+        query: "/timkiem",
+        image: "/timkiemanh",
     }
 
 

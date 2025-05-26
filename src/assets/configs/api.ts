@@ -11,6 +11,18 @@ const API = {
     },
     dalogin: {
         ghi: "/dalogin/ghi"
+    },
+    category:{
+        getAll: "/categories/get"
+    },
+    product:{
+        getAll: "/product/getall",
+        // query_semantic: "/product/getall",
+        getDetail: "/product/getdetail/"
+    },
+    media:{
+        avtatar: "/media/avatar/",
+        product: "/media/products",
     }
 
 }
